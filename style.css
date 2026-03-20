@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Botão do Topo (Modo Escuro) --- */
+.header {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.theme-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.theme-btn:hover { background-color: #555; }
+
+/* --- Modo Escuro  --- */
+body.dark-mode {
+    background-color: #121212;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    color: #f0f0f0; 
+}
+
+body.dark-mode .name, 
+body.dark-mode .stat-value {
+    color: #ffffff;
+}
+
+body.dark-mode .role, 
+body.dark-mode .stat-label, 
+body.dark-mode .bio {
+    color: #aaaaaa;
+}
+
+body.dark-mode .stats {
+    border-color: #333;
+}
+
+body.dark-mode .skills li {
+    background-color: #333;
+    color: #4a90e2;
+}
+
+body.dark-mode .toggle-btn, 
+body.dark-mode .color-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .toggle-btn:hover, 
+body.dark-mode .color-btn:hover {
+    background-color: #555;
+}
+
+/* --- Container e Cards --- */
+.container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 320px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4a90e2;
+    margin-bottom: 15px;
+}
+
+.name { font-size: 1.5rem; margin-bottom: 5px; color: #333; }
+.role { font-size: 1rem; font-weight: 500; margin-bottom: 15px; color: #777; }
+
+/* --- Contadores --- */
+.stats {
+    display: flex; justify-content: center; gap: 40px; width: 100%;
+    padding: 15px 0; margin-bottom: 20px;
+    border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0;
+}
+.stat-item { display: flex; flex-direction: column; align-items: center; }
+.stat-value { font-size: 1.2rem; font-weight: bold; color: #333; }
+.stat-label { font-size: 0.8rem; color: #888; text-transform: uppercase; margin-top: 2px; }
+
+/* --- Habilidades --- */
+.skills { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.skills li { background-color: #e1ecf8; color: #4a90e2; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+/* --- Biografia --- */
+.bio-container { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; margin-bottom: 15px; width: 100%; }
+.bio { font-size: 0.9rem; line-height: 1.5; text-align: center; padding: 10px 10px 0; color: #555;}
+
+/* --- Botões do Card --- */
+.follow-btn {
+    flex: none; /* Impede o botão de esticar verticalmente */
+    margin-top: auto; /* Absorve o espaço vazio, empurrando para o final */
+    width: 100%;
+    background-color: #4a90e2; 
+    color: white; 
+    border: none; 
+    padding: 10px 0;
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+.follow-btn:hover { background-color: #357abd; }
+.follow-btn.following { background-color: #28a745; }
+
+.action-buttons {
+    display: flex; 
+    gap: 10px; 
+    width: 100%; 
+    margin-top: 0; 
+}
+
+.toggle-btn, .color-btn {
+    flex: 1; /* Faz os botões inferiores dividirem o espaço na mesma linha */
+    border: none; 
+    padding: 10px 0; 
+    border-radius: 25px;
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: all 0.3s ease;
+    background-color: #f0f2f5; 
+    color: #333; 
+    font-size: 0.9rem;
+}
+.toggle-btn:hover, .color-btn:hover { background-color: #e4e6e9; }
