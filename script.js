@@ -1,13 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Alternar Modo Claro/Escuro
+    // Alternar Modo Claro/Escuro
     const themeToggleBtn = document.getElementById('theme-toggle');
     themeToggleBtn.addEventListener('click', () => {
-        // Adiciona ou remove a classe 'dark-mode' do elemento <body>
+        
         document.body.classList.toggle('dark-mode');
         
-        // Muda o texto do botão
+      
         if (document.body.classList.contains('dark-mode')) {
             themeToggleBtn.textContent = '☀️ Modo Claro';
         } else {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Mudar a cor de fundo do Card
+    // Mudar a cor de fundo do Card
     const colorButtons = document.querySelectorAll('.color-btn');
     colorButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Expandir/Ocultar Biografia
+    // Expandir/Ocultar Biografia
     const toggleButtons = document.querySelectorAll('.toggle-btn');
     toggleButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Lógica do Botão de Seguir
+    // Botão de Seguir
     const followButtons = document.querySelectorAll('.follow-btn');
     followButtons.forEach(button => {
         button.addEventListener('click', function() {
